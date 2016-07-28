@@ -84,7 +84,7 @@ void draw() {
           hp = hp - 40;
           enemyX = 0;
           enemyY = floor(random(60,420));
-          if (hp - 40 <= 0){
+          if (hp <= 0){
             gameState = GAME_LOSE;
           }
         }
