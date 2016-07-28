@@ -46,6 +46,7 @@ void draw() {
       if (mousePressed){
         gameState = GAME_RUN;
         isPlaying = true;
+        hp = BEGIN_HP;
         enemyX = 0;
         enemyY = floor(random(60,420));
         fighterX = 590;
