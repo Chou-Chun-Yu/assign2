@@ -41,7 +41,7 @@ void draw() {
   
   switch (gameState){
    case GAME_START:
-    image (start1, 0, 0);
+    image (start2, 0, 0);
     if (mouseX > 205 && mouseX <455 && mouseY > 375 && mouseY < 415){
       if (mousePressed){
         gameState = GAME_RUN;
@@ -55,7 +55,7 @@ void draw() {
         treasureY = floor(random(440));
       }else{
         noStroke();
-        image (start2, 0, 0);
+        image (start1, 0, 0);
       }
     }
    break;
@@ -136,13 +136,13 @@ void draw() {
      
    break;
    case GAME_LOSE:
-     image (end1, 0, 0);
+     image (end2, 0, 0);
      if (mouseX > 210 && mouseX <435 && mouseY > 310 && mouseY < 345){
        if (mousePressed){
          gameState = GAME_START;
        }else{
          noStroke();
-         image (end2, 0, 0);
+         image (end1, 0, 0);
        }
      }
    break;
