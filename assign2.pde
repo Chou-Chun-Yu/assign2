@@ -45,14 +45,6 @@ void draw() {
     if (mouseX > 205 && mouseX <455 && mouseY > 375 && mouseY < 415){
       if (mousePressed){
         gameState = GAME_RUN;
-        isPlaying = true;
-        hp = BEGIN_HP;
-        enemyX = 0;
-        enemyY = floor(random(60,420));
-        fighterX = 590;
-        fighterY = floor(random(50,430));
-        treasureX = floor(random(600));
-        treasureY = floor(random(440));
       }else{
         noStroke();
         image (start1, 0, 0);
@@ -79,12 +71,12 @@ void draw() {
        if (enemyY > fighterY){
          enemyY = enemyY - 4;
      }
-     if (enemyX >= fighterX-25 && enemyX <= fighterX+25){
-        if(enemyY >= fighterY-25 && enemyY <= fighterY+25){
+     if (enemyX >= fighterX-40 && enemyX <= fighterX+40){
+        if(enemyY >= fighterY-40 && enemyY <= fighterY+40){
           hp = hp - 40;
           enemyX = 0;
           enemyY = floor(random(60,420));
-          if (hp <= 0){
+          if ( hp <= 0){
             gameState = GAME_LOSE;
           }
         }
@@ -124,8 +116,8 @@ void draw() {
      image(hpbar,0,0); 
 
      image(treasure,treasureX,treasureY);  //treasure/*
-     if (treasureX >= fighterX-25 && treasureX <= fighterX+25){
-       if(treasureY >= fighterY-25 && treasureY <= fighterY+25){
+     if (treasureX >= fighterX-40 && treasureX <= fighterX+40){
+       if(treasureY >= fighterY-40 && treasureY <= fighterY+40){
          if (hp < 200){
            hp = hp + 20;
          }
@@ -139,7 +131,15 @@ void draw() {
      image (end2, 0, 0);
      if (mouseX > 210 && mouseX <435 && mouseY > 310 && mouseY < 345){
        if (mousePressed){
-         gameState = GAME_START;
+         gameState = GAME_RUN;
+         isPlaying = true;
+         hp = BEGIN_HP;
+         enemyX = 0;
+         enemyY = floor(random(60,420));
+         fighterX = 590;
+         fighterY = floor(random(50,430));
+         treasureX = floor(random(600));
+         treasureY = floor(random(440));
        }else{
          noStroke();
          image (end1, 0, 0);
